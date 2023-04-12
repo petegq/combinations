@@ -20,7 +20,9 @@ function generator(length) {
   return result;
 }
 
-const length = 3;
+const length = 5;
 const combinations = generator(length);
-fs.writeFileSync("combinations.txt", combinations.join("\n"));
-console.log("Combinations have been saved to combinations.txt");
+
+fs.writeFileSync(`output-${length}.txt`, combinations.join("\n"));
+
+console.log(`${combinations.length} combinations saved to output-${length}.txt`);
