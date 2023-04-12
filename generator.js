@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 function generator(length) {
   const result = [];
   const characters = "abcdefghijklmnopqrstuvwxyz";
@@ -18,5 +20,7 @@ function generator(length) {
   return result;
 }
 
-const combinations = generator(3);
-console.log(combinations);
+const length = 3;
+const combinations = generator(length);
+fs.writeFileSync("combinations.txt", combinations.join("\n"));
+console.log("Combinations have been saved to combinations.txt");
